@@ -1,21 +1,44 @@
 # 🤖 ROS Robot Navigator
 
-This repository contains a specialized **ROS-based navigation stack** designed for an autonomous mobile robot. The project focuses on the integration of sensor data to achieve precise **SLAM (Simultaneous Localization and Mapping)** and reliable path planning in dynamic environments.
+This project is a ROS-based navigation setup for an autonomous mobile robot. It focuses on getting a robot to understand its surroundings, build a map, and move to a target location safely — even when the environment isn’t static.
 
-## 🚀 Project Overview
-The navigator utilizes a combination of Laser Scan data (LiDAR) and Odometry to build a high-fidelity map of its surroundings. It calculates the most efficient path to a designated goal while performing real-time obstacle avoidance.
+---
+
+## 🚀 What it does
+
+The system uses LiDAR and odometry data to create a map of the environment (SLAM) and figure out where the robot is at any given time. From there, it plans a path to a goal and adjusts in real time to avoid obstacles along the way.
+
+---
 
 ## 🛠️ Tech Stack
-* **Framework:** ROS (Robot Operating System) Noetic/Melodic
-* **Languages:** Python 3, C++ (CMake)
-* **Simulators:** Gazebo (Physics Engine) & RViz (Visualization)
-* **Key Packages:** `gmapping`, `amcl`, `move_base`, `map_server`
 
-## 🧩 Key Features
-* **Autonomous Path Planning:** Implements Dijkstra and A* algorithms for global trajectory calculation.
-* **Dynamic Obstacle Avoidance:** Uses the **Dynamic Window Approach (DWA)** for local costmap updates and agile maneuvers.
-* **Sensor Fusion:** Merges IMU and Encoder data to maintain accurate robot localization (EKF).
-* **Modular Configuration:** YAML-based tuning for inflation layers, footprint padding, and velocity limits.
+- **Framework:** ROS (Noetic / Melodic)  
+- **Languages:** Python 3, C++  
+- **Simulation & Visualization:** Gazebo, RViz  
+
+### Key ROS packages:
+- `gmapping` → for SLAM  
+- `amcl` → for localization  
+- `move_base` → for navigation  
+- `map_server` → for map handling  
+
+---
+
+## 🧩 Features
+
+- **Autonomous Navigation**  
+  Uses path planning algorithms like Dijkstra and A* to find efficient routes.
+
+- **Obstacle Avoidance**  
+  Applies the Dynamic Window Approach (DWA) to react to obstacles in real time.
+
+- **Sensor Fusion**  
+  Combines IMU and encoder data (EKF) to improve localization accuracy.
+
+- **Configurable Setup**  
+  Uses YAML files to tweak things like robot footprint, inflation radius, and speed limits.
+
+---
 
 ## 🖼️ Gallery
 
@@ -29,13 +52,10 @@ Gazebo
 
 <img width="989" height="721" alt="image" src="https://github.com/user-attachments/assets/27eb2487-ba03-449a-8c51-e09ec5167c9b" />
 
+---
 
-## 🏁 Getting Started
+## Notes
 
-### 1. Prerequisites
-Ensure you have a ROS environment installed (Noetic recommended).
-```bash
-sudo apt-get install ros-noetic-navigation
-sudo apt-get install ros-noetic-gmapping
+This project is mainly aimed at understanding how different parts of the ROS navigation stack come together — from mapping and localization to planning and control.
 
 
